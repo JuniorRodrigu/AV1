@@ -18,7 +18,7 @@
       }
     </style>
  
-    
+    <center>
     <script type="text/javascript">
       function contracheque(){
         var nome    =  form_gerarcontracheque.nome.value;
@@ -72,7 +72,7 @@
         }
 
         document.getElementById("demo").innerHTML = 
-        "---------------------------------------------- <b>CONTRA CHEQUE</b> ----------------------------------------------"+
+        "                          <b>CONTRA CHEQUE</b>                                       "+
         "<br><b>FUNCIONÁRIO:</b> "+nome.toUpperCase()+
         "<br><b>CARGO:</b> "+cargo.toUpperCase()+
         "<br><b>SALÁRIO ATUAL:</b> "+parseFloat(salario).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
@@ -80,11 +80,11 @@
         "<br><b>NOVO SALÁRIO:</b> "+novo_sal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
         "<br><b>DESC. INSS:</b> "+inss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+perc_inss+
         "<br><b>SALÁRIO LIQ.:</b> "+sal_liq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
-        "<br>------------------------------------------------------------------------------------------------------------------"
+        "<br>                                                                               "
 
       }
     </script>
-
+</center>
   </head>
 
   <body>
