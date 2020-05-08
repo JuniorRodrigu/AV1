@@ -1,0 +1,145 @@
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Projeto WEB - AV1</title>
+    
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+   
+    <link href="css/starter-template.css" rel="stylesheet">
+
+    
+    <style>
+      td, th {
+        text-align: center;
+      }
+    </style>
+ 
+  
+    <script>
+      function calcularImc() {
+        nome   = form_imc.nome.value;
+        peso   = form_imc.peso.value;
+        altura = form_imc.altura.value;
+        var nivel;
+        var situaçao;
+        imc=parseFloat(peso)/(parseFloat(altura)*parseFloat(altura));
+
+        if (imc < 18.5){ 
+          nivel= 'Baixo Peso';
+          situaçao= 'Peso baixo para a altura. Maior probabilidade de anorexia.';
+        }
+
+        else if (imc < 24.9){
+          nivel= 'Peso Normal';
+          situaçao='Maior probabilidade de ser um indivíduo saudável.';
+        }
+
+        else if (imc < 29.9){
+          nivel= "Pré-Obesidade";
+          situaçao= 'Alguma probabilidade de problemas de saúde. Predisposição a tornar-se obeso.';
+        }
+
+        else if (imc < 34.9){
+          nivel= 'Obesidade Grau 1';
+          situaçao= 'Risco Moderado de diabetes tipo 2, hipertensão, colesterol, cardiopatia.';
+        }
+
+        else if (imc < 39.9){
+          nivel= 'Obesidade Grau 2';
+          situaçao= 'Risco Grave. Aumenta o risco das doenças associadas. O risco de mortalidade aumenta 50%.';
+        }
+        
+        else{
+          nivel= 'Obesidade Mórbita';
+          situaçao='Risco Muito Grave. O ricso de doenças associadas assim como a mortalidade aumenta 90%.';
+        };
+
+        document.getElementById("nomeA").innerHTML = '<p><b>Nome:</b></p>' +nome;
+        document.getElementById("pesoA").innerHTML = '<p><b>Peso:</b></p>' +peso;
+        document.getElementById("alturaA").innerHTML ='<p><b>Altura:</b></p>' +altura;
+        document.getElementById("imcA").innerHTML ='<p><b>IMC:</b></p>' +imc.toFixed(2);
+        document.getElementById("nivelA").innerHTML = '<p><b>Nível:</b></p>' +nivel;
+        document.getElementById("situacaoA").innerHTML = '<p><b>Problema:</b></p>' +situaçao;
+      }
+        
+    </script>
+  </head>
+
+  <body>
+  <b>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="#">QUESTÃO 4</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+                  <a class="dropdown-item" href="1.html">Questão  1</a>
+                  <a class="dropdown-item" href="2.html">Questão  2</a>
+                  <a class="dropdown-item" href="3.html">Questão  3</a>
+                  <a class="dropdown-item" href="4.html">Questão  4</a>
+                </div>
+             
+            </ul>
+          </div>
+      </nav>
+    </header>
+    
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        
+        <p class="lead">Faça um programa que calcule o IMC de uma pessoa e mostre o resultado. <br></p>
+      </div>
+      
+      <form id="form_imc" name="form_imc" method="POST" action="">
+        <div class="row">
+          <div class="col-6">
+            <label>Nome Completo</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
+            <label>Peso</label>
+            <input type="number" class="form-control" id="peso" name="peso" placeholder="Peso" required>
+            <label>Altura</label>
+            <input type="number" class="form-control" id="altura" name="altura" placeholder="Altura" required>
+            <br>
+            <button onclick="calcularImc()" class="btn btn-success" type="button">Calcular</button>
+          </div>
+        </form>
+          <div class="col-6">
+            <h5>Resultado:</h5>
+              <p id="nomeA">Nome:</p>
+              <p id="pesoA">Peso:</p>
+              <p id="alturaA">Altura:</p>
+              <p id="imcA">IMC:</p>
+              <p id="nivelA">Nível:</p>
+              <p id="situacaoA">Situação:</p>
+          </div>
+        </div>
+
+ 
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Desenvolvido por Juvenal - Code in <a target="_blank" href="https://github.com/jjuunnior/AV1.git">GitHub</a> </span>
+          <img src="qrcod.png"alt="Imagem" height="77px" height="77px">
+       
+        </div>
+    </footer>
+
+
+  </b>
+    </body>
+</html>
