@@ -1,0 +1,110 @@
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Projeto WEB - AV1</title>
+    
+   
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
+    
+    <link href="css/starter-template.css" rel="stylesheet">
+
+    <script>
+      function calcularMediaA(){
+          nome        = form_calcularmedia.nome.value;
+          disciplina  = form_calcularmedia.disciplina.value;
+          notaUm      = form_calcularmedia.nota1.value;
+          notaDois    = form_calcularmedia.nota2.value;
+
+          media = (parseFloat(notaUm) + parseFloat(notaDois))/2;
+          
+          if (media < 3){
+              resultado = 'Reprovado';
+          }
+
+          else if (media >= 7){
+              resultado = 'Aprovado';
+          }
+
+          else{
+              resultado = 'Recuperação';
+          }
+
+          document.getElementById("nomeAluno").innerHTML = '<p><b>Nome:</b></p>' + nome;
+          document.getElementById("nomeDisciplina").innerHTML = '<p><b>Disciplina:</b></p>' + disciplina;
+          document.getElementById("suaMedia").innerHTML = '<p><b>Média:</b></p>' + media;
+          document.getElementById("situacao").innerHTML = '<p><b>Situação:</b></p>' + resultado;
+
+      }
+  </script>
+  </head>
+ 
+<body>
+  <b>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
+            <a class="navbar-brand" href="1.html">QUESTÃO 1</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+  
+               
+                    <a class="dropdown-item" href="1.html">Questão 1</a>
+                    <a class="dropdown-item" href="2.html">Questão 2</a>
+                    <a class="dropdown-item" href="3.html">Questão 3</a>
+                    <a class="dropdown-item" href="4.html">Questão 4</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </nav>
+      </header> 
+    
+
+    <main role="main" class="container">
+
+        <div class="starter-template">
+          <h1>Questão - 01</h1>
+          <p class="lead">calcular média do aluno.</p>
+        </div>
+
+        <div class="row">
+        <div class="col-6">
+        <form id="form_calcularmedia" name="form_calcularmedia" method="POST" action="">
+          <label>Seu nome</label><br>
+              <input type="text" name="nome" id="nome" required><br><br>
+          <label>Disciplina</label><br>
+              <input type="text" name="disciplina" id="disciplina" required><br><br>
+          <label>Nota 1</label><br>
+              <input type="number" name="nota1" id="nota1" required><br><br>
+          <label>Nota 2</label><br>
+              <input type="number" name="nota2" id="nota2" required><br><br>
+  
+              <button onclick="calcularMediaA()" class="btn btn-success" type="button">Calcular</button>
+      </form>
+      </div>
+      
+      <div class="col-6">
+          <p id="nomeAluno">Nome:</p>
+          <p id="nomeDisciplina">Disciplina:</p>
+          <p id="suaMedia">Média:</p>
+          <p id="situacao">Situação:</p>
+      </div>
+      </div>
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Desenvolvido por JUVENAL - Code in <a target="_blank" href="https://github.com/jjuunnior/AV1">GitHub</a> </span>
+          <img src="qrcod.png"alt="Imagem" height="77px" height="77px">
+        </div>
+    </footer>
+  </b>
+</body>
+</html>
